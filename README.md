@@ -3,23 +3,24 @@
 DEVELOPMENT MOTIVATION
 ---
 > 구인구직싸이트 -
-> > -- 개발동기 적는부분<br> 
-> > -- 에 의 불편함에 의해 ~~ <br> 
+> > 구인구직을 하는 입장에서 사람인이나 잡코리아와 같은 사이트 <br> 
+> > 보다 더 간편하게 정보를 수집할 수 있는 사이트 <br> 
  
 
 HISTORY
 ---
-[TOTAL](DOCUMENT/HISTORY/TOTAL) | [나재현](DOCUMENT/HISTORY/나재현) | [이동환](DOCUMENT/HISTORY/이동환) | [박정현](DOCUMENT/HISTORY/박정현) |  [최원준](DOCUMENT/HISTORY/최원준) | 
+[TOTAL](DOCUMENT/HISTORY/TOTAL) | [나재현](DOCUMENT/HISTORY/나재현) | [이동환](DOCUMENT/HISTORY/이동환) | [박정현](DOCUMENT/HISTORY/박정현) | [최원준](DOCUMENT/HISTORY/최원준) |
 
 
 PLANS
 ---
  |LANGUAGE|PLAN|IMPLEMENT|DESCRIPTION|
  |-|-|-|-|
- |JAVA|-|-|-|
- |JSP/SERVLET|2024/04/24 - 2024/04/28|-|-|
- |SPRING STS3|-|-|-|
- |SPRING BOOT|2024/06/01 - 2024/06/30|-|-|
+ |JAVA|2024/04/08 ~ 2024/04/23|-|-|
+ |JSP/SERVLET|2024/04/24 ~ 2024/04/28|-|-|
+ |SPRING STS3|2024/04/28 ~ 2024/05/14|-|-|
+ |SPRING BOOT|2024/05/15 ~ 2024/06/30|-|-|
+ 
  
 
 MEMBERERS
@@ -27,10 +28,10 @@ MEMBERERS
 |NAME|ROLE|DETAILS|DESCRIPTION| 
 |---|---|---|---|
 |정우균|FN| FrontController / Docment 관리 / Dependencies  관리 |---|
+|최원준|FN| 모든PAGE와 서버간 REQ / RESP |---|
 |나재현|BN| OFFER - 회원가입 / 회원탈퇴 / 기업정보 CRUD|---|
 |이동환|BN| 유저공통 - 로그인 / 로그아웃|---|
 |박정현|BN| SEEKER 회원가입 회원탈퇴 이력서 CRUD|---|
-|최원준|FN| 모든 PAGE와 서버간 REQ / RESP |---|
 
 SKILLS
 ---
@@ -58,35 +59,40 @@ END POINT DOC
 ---
 |URI|REQUEST METHOD|REQUEST PARAMETER TYPE|RESPONSE VALUE TYPE|DESCRIPTION|
 |---|---|---|---|---|
-|/user/join|POST|---|---|---|
-|/user/login|GET/POST|---|---|---|
-|/user/logout|POST|---|---|---|
+|/user/confirmid|GET/POST|NICKNAME POHNE TYPE|String|---|
+|/user/confirmpw|GET/POST|NICKNAME USERNAME PHONE|String|---|
 |---|---|---|---|---|
-|/seeker/join|---|---|---|---|
-|/seeker/remove|---|---|---|---|
-|/seeker/resume/add|---|---|---|---|
-|/seeker/resume/list|---|---|---|---|
-|---|---|---|---|---|
-|/offer/join|---|---|---|---|
-|/offer/remove|---|---|---|---|
-|/offer/company/read|---|---|---|---|
+|/seeker/resume/add|GET/POST|form|String|---|
+|/seeker/resume/update|GET/POST|ID|String|---|
+|/seeker/resume/read|GET|ID|String|---|
+|/seeker/resume/list|GET|---|String|---|
+|/seeker/delete|GET/POST|ID|String|---|
 |---|---|---|---|---|
 
 DEPENDENCIES LIST
 ---
 |CAT|NAME|DESCRIPTION|LINK|-|-|
 |-|-|-|-|-|-|
-|FN|-|-|-|-|-|
-|FN|-|-|-|-|-|
-|BN|-|-|-|-|-|
-|BN|-|-|-|-|-|
-|DB|-|-|-|-|-|
+|FN|WEB|BOOT WEB|org.springframework.boot:spring-boot-starter-web|-|-|
+|FN|THYMELEAF|THYMELEAF|org.springframework.boot:spring-boot-starter-thymeleaf|-|-|
+|BN|LOMBOK|LOMBOK|org.projectlombok:lombok|-|-|
+|BN|SPRING_SECURITY|SPRING_SECURITY|org.springframework.boot:spring-boot-starter-security|-|-|
+|BN|SECURITY+THYMELEAF|SECURITY+THYMELEAF|org.thymeleaf.extras:thymeleaf-extras-springsecurity6|-|-|
+|BN|ORM_JPA|ORM_JPA|org.springframework.boot:spring-boot-starter-data-jpa|-|-|
+|BN|MAIL|MAIL|org.springframework.boot:spring-boot-starter-mail|-|-|
+|BN|DEVTOOLS|DEVTOOLS|org.springframework.boot:spring-boot-devtools|-|-|
+|BN|VALIDATOR|VALIDATOR|org.springframework.boot:spring-boot-starter-validation|-|-|
+|BN|OAUTH2-Client|OAUTH2-Client|org.springframework.boot:spring-boot-starter-oauth2-client|-|-|
+|BN|TX|TX|org.springframework:spring-tx|-|-|
+|DB|DBCONN BASIC|DBCONN BASIC|org.springframework.boot:spring-boot-starter-jdbc|-|-|
 |DEVOPS|-|-|-|-|-|
 
 
 ERD[KoreaJobDb]
 ---
 ![20240425155554](https://github.com/jungwoogyun/EM-01-PROJECTS/assets/84259104/8631169d-3c85-4be4-a097-613bf1e5b7e0)
+
+
 
 
 FILE TREES[JSP/SERVLET]
