@@ -29,9 +29,9 @@ MEMBERERS
 |---|---|---|---|
 |정우균|FN| FrontController / Docment 관리 / Dependencies  관리 |---|
 |최원준|FN| 모든PAGE와 서버간 REQ / RESP |---|
-|나재현|BN| OFFER - 회원가입 / 회원탈퇴 / 기업정보 CRUD|---|
-|이동환|BN| 유저공통 - 로그인 / 로그아웃|---|
-|박정현|BN| SEEKER 회원가입 회원탈퇴 이력서 CRUD|---|
+|나재현|BN| 유저공통 - ID찾기 / PW찾기 / 회원가입 유효성검사 |---|
+|이동환|BN| SEEKER 이력서 CRUD / 공지사항 CRUD |---|
+|박정현|BN| OFFER 기업정보 CRUD / 기업공고 CRUD |---|
 
 SKILLS
 ---
@@ -68,31 +68,38 @@ END POINT DOC
 |/seeker/resume/list|GET|---|String|---|
 |/seeker/delete|GET/POST|ID|String|---|
 |---|---|---|---|---|
+|/offer/join|GET|---|void|---|
+|---|---|---|---|---|
+|/offer/company/add|GET/POST|McodelAttribute<br>CompanyDto|void String|---|
+|/offer/company/read|GET|Model|void String|---|
+|/offer/company/delete|GET/POST|ID|String|---|
+|/offer/company/update|GET/POST|ModelAttribute<br>Company|void|---|
+|---|---|---|---|---|
+|/offer/jobopening/read|GET|---|void|---|
+|/offer/jobopening/add|GET/POST|---|void|---|
 
 DEPENDENCIES LIST
 ---
 |CAT|NAME|DESCRIPTION|LINK|-|-|
 |-|-|-|-|-|-|
-|FN|WEB|BOOT WEB|org.springframework.boot:spring-boot-starter-web|-|-|
-|FN|THYMELEAF|THYMELEAF|org.springframework.boot:spring-boot-starter-thymeleaf|-|-|
-|BN|LOMBOK|LOMBOK|org.projectlombok:lombok|-|-|
-|BN|SPRING_SECURITY|SPRING_SECURITY|org.springframework.boot:spring-boot-starter-security|-|-|
-|BN|SECURITY+THYMELEAF|SECURITY+THYMELEAF|org.thymeleaf.extras:thymeleaf-extras-springsecurity6|-|-|
-|BN|ORM_JPA|ORM_JPA|org.springframework.boot:spring-boot-starter-data-jpa|-|-|
-|BN|MAIL|MAIL|org.springframework.boot:spring-boot-starter-mail|-|-|
-|BN|DEVTOOLS|DEVTOOLS|org.springframework.boot:spring-boot-devtools|-|-|
-|BN|VALIDATOR|VALIDATOR|org.springframework.boot:spring-boot-starter-validation|-|-|
-|BN|OAUTH2-Client|OAUTH2-Client|org.springframework.boot:spring-boot-starter-oauth2-client|-|-|
-|BN|TX|TX|org.springframework:spring-tx|-|-|
-|DB|DBCONN BASIC|DBCONN BASIC|org.springframework.boot:spring-boot-starter-jdbc|-|-|
+|FN|WEB| BOOT WEB|org.springframework.boot:spring-boot-starter-web|-|-|
+|FN|THYMELEAF| THYMELEAF|org.springframework.boot:spring-boot-starter-thymeleaf|-|-|
+|BN|LOMBOK|LOMBOK| org.projectlombok:lombok|-|-|
+|BN|SPRING_SECURITY| SPRING_SECURITY|org.springframework.boot:spring-boot-starter-security|-|-|
+|BN|SECURITY+THYMELEAF| SECURITY+THYMELEAF|org.thymeleaf.extras:thymeleaf-extras-springsecurity6|-|-|
+|BN|ORM_JPA| ORM_JPA|org.springframework.boot:spring-boot-starter-data-jpa|-|-|
+|BN|MAIL| MAIL|org.springframework.boot:spring-boot-starter-mail|-|-|
+|BN|DEVTOOLS| DEVTOOLS|org.springframework.boot:spring-boot-devtools|-|-|
+|BN|VALIDATOR| VALIDATOR|org.springframework.boot:spring-boot-starter-validation|-|-|
+|BN|OAUTH2-Client| OAUTH2-Client|org.springframework.boot:spring-boot-starter-oauth2-client|-|-|
+|BN|TX| TX|org.springframework:spring-tx|-|-|
+|DB|DBCONN BASIC| DBCONN BASIC|org.springframework.boot:spring-boot-starter-jdbc|-|-|
 |DEVOPS|-|-|-|-|-|
 
 
 ERD[KoreaJobDb]
 ---
 ![20240425155554](https://github.com/jungwoogyun/EM-01-PROJECTS/assets/84259104/8631169d-3c85-4be4-a097-613bf1e5b7e0)
-
-
 
 
 FILE TREES[JSP/SERVLET]
