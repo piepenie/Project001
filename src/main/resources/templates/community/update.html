@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!--  link   -->
+    <th:block th:insert="~{fragments/link :: linkFragment}" />
+
+    <link rel="stylesheet" href="/css/community/update.css">
+    <script src="/js/community/update.js" defer></script>
+
+</head>
+<body>
+
+<div class="wrapper">
+    <header>
+        <!-- header   -->
+        <th:block th:insert="~{fragments/top_header :: topHeaderFragment}" />
+        <!-- nav       -->
+        <th:block th:insert="~{fragments/nav :: navFragment}" />
+
+    </header>
+    <main>
+        <section class="layout-150">
+            <h1>게시글 수정</h1>
+            <form th:action="@{/community/update(pageNo=${pageNo})}" method="post">
+                    <label for="title">제목</label>
+                    <input type="text" id="title" th:value="${community.title}"  name="title"  class="form-control" />
+                    <label for="content">내용</label>
+                    <textarea id="content" th:text="${community.content}" name="content"   class="form-control"></textarea>
+                    <input type="hidden" th:value="${no}" name="no">
+                <button type="submit" class="btn btn-primary">수정</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- footer       -->
+    <th:block th:insert="~{fragments/footer :: footerFragment}" />
+</div>
+</body>
+</html>
